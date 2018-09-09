@@ -9,7 +9,7 @@ function processGrid(){
 
 function makeGrid(rows, cols) {
   // Takes two numbers, and uses them to make a grid/table.
-  const pixelCanvas = document.getElementById('pixelCanvas');
+
   pixelCanvas.innerHTML = ''; // Clears table, allowing users to 'reset'
 
   for (let row = 1; row <= rows; row++){
@@ -29,9 +29,16 @@ function pickColor(event){
   clickColor = event.target.value;
   colorPicker.value = clickColor;
 }
-
+function colorSquare(event){
+  //Colors a square
+  if (event.target.nodeName === "TD"){
+    event.target.style.backgroundColor = clickColor;
+  }
+}
+const pixelCanvas = document.getElementById('pixelCanvas');
 const formSubmit = document.getElementById('formSubmit');
-formSubmit.addEventListener('click', processGrid);
-let clickColor = "#000000";
 const colorPicker = document.getElementById('colorPicker');
+let clickColor = "#000000";
+formSubmit.addEventListener('click', processGrid);
 colorPicker.addEventListener('change', pickColor);
+pixelCanvas.addEventListener('click', colorSquare);
