@@ -24,6 +24,14 @@ function makeGrid(rows, cols) {
   }
 
 }
+function pickColor(event){
+  // Sets the color of the colorPicker and pixels.
+  clickColor = event.target.value;
+  colorPicker.value = clickColor;
+}
 
-let formSubmit = document.getElementById('formSubmit');
+const formSubmit = document.getElementById('formSubmit');
 formSubmit.addEventListener('click', processGrid);
+let clickColor = "#000000";
+const colorPicker = document.getElementById('colorPicker');
+colorPicker.addEventListener('change', pickColor);
