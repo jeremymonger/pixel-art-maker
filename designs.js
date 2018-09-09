@@ -1,5 +1,14 @@
+function processGrid(){
+  // Gets the inputs ready for makeGrid()
+  let inputHeight = document.getElementById('inputHeight');
+  rows = inputHeight.value;
+  let inputWidth = document.getElementById('inputWidth');
+  cols = inputWidth.value;
+  makeGrid(rows,cols)
+}
+
 function makeGrid(rows, cols) {
-// Takes two numbers, and uses them to make a grid/table.
+  // Takes two numbers, and uses them to make a grid/table.
   const pixelCanvas = document.getElementById('pixelCanvas');
   pixelCanvas.innerHTML = ''; // Clears table, allowing users to 'reset'
 
@@ -15,5 +24,6 @@ function makeGrid(rows, cols) {
   }
 
 }
-makeGrid(6,6);
-makeGrid(1,4);
+
+let formSubmit = document.getElementById('formSubmit');
+formSubmit.addEventListener('click', processGrid);
