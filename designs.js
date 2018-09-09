@@ -35,10 +35,25 @@ function colorSquare(event){
     event.target.style.backgroundColor = clickColor;
   }
 }
+function colorBorder(event){
+  //Changes border cover when mouse is over text.
+
+  if (event.type === "mouseover"){
+
+    event.target.style.borderColor = clickColor;
+  }
+
+  else{
+    event.target.style.borderColor =  "#000000";
+  }
+}
 const pixelCanvas = document.getElementById('pixelCanvas');
 const formSubmit = document.getElementById('formSubmit');
 const colorPicker = document.getElementById('colorPicker');
 let clickColor = "#000000";
 formSubmit.addEventListener('click', processGrid);
 colorPicker.addEventListener('change', pickColor);
+
+pixelCanvas.addEventListener('mouseover', colorBorder);
 pixelCanvas.addEventListener('click', colorSquare);
+pixelCanvas.addEventListener('mouseout', colorBorder);
