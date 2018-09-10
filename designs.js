@@ -4,12 +4,12 @@ function processGrid(){
   rows = inputHeight.value;
   let inputWidth = document.getElementById('inputWidth');
   cols = inputWidth.value;
+
   makeGrid(rows,cols)
 }
 
 function makeGrid(rows, cols) {
   // Takes two numbers, and uses them to make a grid/table.
-
   pixelCanvas.innerHTML = ''; // Clears table, allowing users to 'reset'
 
   for (let row = 1; row <= rows; row++){
@@ -24,22 +24,23 @@ function makeGrid(rows, cols) {
   }
 
 }
+
 function pickColor(event){
   // Sets the color of the colorPicker and pixels.
   clickColor = event.target.value;
   colorPicker.value = clickColor;
 }
+
 function colorSquare(event){
   //Colors a square
-  if (event.target.nodeName === "TD"){
+  if (event.target.nodeName === 'TD'){
     event.target.style.backgroundColor = clickColor;
   }
 }
+
 function colorBorder(event){
   //Changes border cover when mouse is over text.
-
-  if (event.type === "mouseover"){
-
+  if (event.type === 'mouseover'){
     event.target.style.borderColor = clickColor;
   }
 
@@ -47,10 +48,13 @@ function colorBorder(event){
     event.target.style.borderColor =  "#000000";
   }
 }
+
 const pixelCanvas = document.getElementById('pixelCanvas');
 const formSubmit = document.getElementById('formSubmit');
 const colorPicker = document.getElementById('colorPicker');
+
 let clickColor = "#000000";
+
 formSubmit.addEventListener('click', processGrid);
 colorPicker.addEventListener('change', pickColor);
 
