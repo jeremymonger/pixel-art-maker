@@ -1,16 +1,14 @@
-# Pixel Art Maker Project
-
+# Pixel Art Maker
+This app allows you to color squares in a grid, with whatever color you want!
 ## Table of Contents
 
-* [Instructions](#instructions)
+* [Useage](#Usage)
 * [Contributing](#contributing)
 
-## Instructions
+## Usage
 
-To get started, open `designs.js` and start building out the app's functionality.
-
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+To get started, fill out "Grid Height" and "Grid Width", then click "Make Grid!"" to determine the size of the grid. Now you start clicking squares to color them! You can change your color under "Pick a Color".
 
 ## Contributing
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+This repository was for a Udacity class project, so I am unlikely to continue working on it after completion. Sorry!
